@@ -1,3 +1,15 @@
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+***
+***
+***
+*** To avoid retyping too much info. Do a search and replace for the following:
+*** techsavagery, tests-cypress, twitter_handle, email, Tech Savagery: Tests - Cypress, Functional tests built to showcase the features and value of the Cypress.io testing framework.
+-->
+
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -107,6 +119,8 @@ This is an example of how to list things you need to use the software and how to
 2. Install Next.js typescript example `npx create-next-app --example with-typescript {project-name}`
 3. Install TypeScript `npm install --save-dev typescript`
 4. Enable TypeScript `npm install --save-dev @types/react @types/react-dom @types/node`
+5. Install Chakra UI `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`
+6. Setup Api Middlewares
 <!-- USAGE EXAMPLES -->
 
 ## Usage
