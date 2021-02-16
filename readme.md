@@ -1,15 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** techsavagery, tests-cypress, twitter_handle, email, Tech Savagery: Tests - Cypress, Functional tests built to showcase the features and value of the Cypress.io testing framework.
--->
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -106,13 +94,19 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/techsavagery/tests-cypress.git
+   git clone https://github.com/TechSavagery/Next.js-Typescript-Chakra-UI.git
    ```
 2. Install NPM packages
    ```sh
    npm install
    ```
 
+## Getting Started from Scratch
+
+1. Create Blank Repo
+2. Install Next.js typescript example `npx create-next-app --example with-typescript {project-name}`
+3. Install TypeScript `npm install --save-dev typescript`
+4. Enable TypeScript `npm install --save-dev @types/react @types/react-dom @types/node`
 <!-- USAGE EXAMPLES -->
 
 ## Usage
@@ -125,7 +119,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_-->
 
 ## Roadmap
 
-See the [open issues](https://github.com/techsavagery/tests-cypress/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/TechSavagery/Next.js-Typescript-Chakra-UI/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
