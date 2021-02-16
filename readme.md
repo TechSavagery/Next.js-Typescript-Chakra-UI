@@ -121,6 +121,7 @@ This is an example of how to list things you need to use the software and how to
 4. Enable TypeScript `npm install --save-dev @types/react @types/react-dom @types/node`
 5. Install Chakra UI `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`
 6. Setup Api Middlewares
+7. Setup Api Endpoints
 <!-- USAGE EXAMPLES -->
 
 ## Usage
