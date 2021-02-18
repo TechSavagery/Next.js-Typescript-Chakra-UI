@@ -54,7 +54,7 @@ export const updateUserInfo = async (
   bio: string,
   file: any
 ) => {
-  let profilePicture = "testing";
+  let profilePicture;
   if (file) {
     const image = await cloudinary.uploader.upload(file.path, {
       width: 512,
