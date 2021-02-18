@@ -1,4 +1,5 @@
 import { MongoClient } from "mongodb";
+const globalAny: any = global;
 
 /**
  * Global is used here to maintain a cached connection across hot reloads
@@ -6,8 +7,6 @@ import { MongoClient } from "mongodb";
  * during API Route usage.
  * https://github.com/vercel/next.js/pull/17666
  */
-
-const globalAny: any = global;
 globalAny.mongo = globalAny.mongo || {};
 
 let indexesCreated = false;
@@ -22,10 +21,7 @@ export async function createIndexes(db: any) {
   indexesCreated = true;
 }
 
-export default async function database(
-  req: { dbClient: any; db: any },
-  next: () => any
-) {
+export default async function database(req: any, res: any, next: () => void) {
   if (!globalAny.mongo.client) {
     globalAny.mongo.client = new MongoClient(process.env["MONGODB_URI"]!, {
       useNewUrlParser: true,
@@ -36,5 +32,6 @@ export default async function database(
   req.dbClient = globalAny.mongo.client;
   req.db = globalAny.mongo.client.db(process.env.DB_NAME);
   if (!indexesCreated) await createIndexes(req.db);
+  res;
   return next();
 }
