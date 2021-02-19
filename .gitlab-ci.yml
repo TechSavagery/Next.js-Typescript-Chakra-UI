@@ -1,0 +1,21 @@
+image: node:latest
+
+deploy_production:
+  only:
+    refs:
+      - master
+  cache: {}
+  stage: deploy
+  environment:
+    name: Production
+    url: https://nextjs-typescript-chakraui.techsavagery.net
+  script:
+    - sshpass -V
+    - export SSHPASS=$USER_PASS
+    - cd ../server
+    - sshpass -e rsync -r --omit-dir-times -e "ssh -o StrictHostKeyChecking=no" . $USER_NAME@$SERVER_IP:/root/sandbox-mern/server
+    - sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP cd nextjs-typescript-chakraui/
+    - sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP git pull
+    - sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP npm install
+    - sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP npm run build
+    - sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP pm2 restart nextjs-typescript-chakraui
