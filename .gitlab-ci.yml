@@ -13,7 +13,6 @@ deploy_production:
     - apt-get update -qq && apt-get install -y -qq sshpass
     - sshpass -V
     - export SSHPASS=$USER_PASS
-    - cd ../server
     - sshpass -e rsync -r --omit-dir-times -e "ssh -o StrictHostKeyChecking=no" . $USER_NAME@$SERVER_IP:/root/sandbox-mern/server
     - sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP cd nextjs-typescript-chakraui/
     - sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP git pull
