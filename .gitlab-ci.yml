@@ -10,7 +10,7 @@ deploy_production:
     name: Production
     url: https://nextjs-typescript-chakraui.techsavagery.net
   script:
-    - sudo apt-get update -qq && apt-get install -y -qq sshpass
+    - apt-get update -qq && apt-get install -y -qq sshpass
     - sshpass -V
     - export SSHPASS=$USER_PASS
     - cd ../server
