@@ -15,6 +15,7 @@ deploy_production:
     - export SSHPASS=$USER_PASS
     - script -qc "sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP cd ~"
     - script -qc "sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP cd nextjs-typescript-chakraui"
+    - script -qc "sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP git reset --hard"
     - script -qc "sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP git pull"
     - script -qc "sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP npm install"
     - script -qc "sshpass -p $USER_PASS ssh $USER_NAME@$SERVER_IP npm run build"

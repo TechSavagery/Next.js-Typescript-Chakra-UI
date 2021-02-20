@@ -120,7 +120,7 @@ export async function sendEmailVerification(
     html: `
         <div>
           <p>Hello, ${userName}</p>
-          <p>Please follow <a href="${process.env.WEB_URI}/verify-email/${token}">this link</a> to confirm your email.</p>
+          <p>Please follow <a href="${process.env.WEB_URI}verify-email/${token}">this link</a> to confirm your email.</p>
         </div>
         `,
   };
