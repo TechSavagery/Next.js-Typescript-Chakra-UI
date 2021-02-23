@@ -49,8 +49,8 @@ export default function PublicHeader() {
           <MenuItems to="/about">About </MenuItems>
           <MenuItems to="/features">Features </MenuItems>
           <MenuItems to="/pricing">Pricing </MenuItems>
-          <MenuItems to="/users">Users </MenuItems>
-          <MenuItems to="/api/users">Users API </MenuItems>
+          <MenuItems to="/posts">Posts </MenuItems>
+          <MenuItems to="/api/posts">Posts API </MenuItems>
           <MenuItems to="/signup" isLast>
             <Button
               variant="outline"
