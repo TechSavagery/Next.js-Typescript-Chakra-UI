@@ -1,6 +1,7 @@
 import { Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import PublicLayout from "../components/layouts/PublicLayout";
+import AddPostForm from "../components/ui/forms/AddPostForm";
 import PostsGrid from "../components/ui/grids/PostsGrid";
 import DefaultBreadcrumb from "../components/ui/widgets/navigation/breadCrumbs/DefaultBreadcrumb";
 import { Crumb } from "../interfaces";
@@ -34,12 +35,13 @@ function PostsPage(props: Props) {
         w={["100%", "100%", "100%", "100%"]}
         direction={["column", "column", "row", "column"]}
         bg={bg}
-        boxShadow="md"
+        boxShadow="unset"
         rounded="lg"
         p="4"
         align="center"
         m="2.5px"
       >
+        <AddPostForm />
         <PostsGrid {...PostGridProp} />
       </Flex>
       <style global jsx>{`

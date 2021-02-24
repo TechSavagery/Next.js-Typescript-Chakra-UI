@@ -64,7 +64,7 @@ function PostCard(props: Props) {
 
         <Box textAlign="left">
           <Box as="span" bg={bg} color={color} fontSize="sm">
-            <Text color={color} isTruncated noOfLines={[2, 3, 5]}>
+            <Text color={color} isTruncated noOfLines={[2, 2, 2]}>
               {content}
             </Text>
           </Box>

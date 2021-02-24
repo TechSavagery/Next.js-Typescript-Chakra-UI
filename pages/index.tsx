@@ -14,7 +14,7 @@ function IndexPage() {
           title="React landing page with Chakra UI"
           subtitle="This is the subheader section where you describe the basic benefits of your product"
           image="/tech-savagery-home-hero-1.jpg"
-          ctaLink="https://techsavagery.net"
+          ctaLink="/signup"
           ctaText="Create your account now"
         />
       </PublicLayout>

@@ -19,8 +19,8 @@ import {
 import { FaAlignLeft, FaIdCard, FaUserAlt } from "react-icons/fa";
 import Router from "next/router";
 import { Crumb } from "../interfaces";
-import PublicLayout from "../components/layouts/PublicLayout";
 import DefaultBreadcrumb from "../components/ui/widgets/navigation/breadCrumbs/DefaultBreadcrumb";
+import UserLayout from "../components/layouts/UserLayout";
 
 type Props = {
   crumbs: Crumb[];
@@ -67,8 +67,10 @@ const AccountSettings = () => {
         },
       });
       setMsg({ message: "Profile updated", isError: false });
+      setMsg({ message: "", isError: false });
     } else {
       setMsg({ message: await res.text(), isError: true });
+      setMsg({ message: "", isError: false });
     }
     setIsUpdatingProfile(false);
   };
@@ -288,6 +290,8 @@ const AccountSettings = () => {
 const AccountPage = (props: Props) => {
   const [] = useCurrentUser();
   const bg = useColorModeValue("white", "#171923");
+  const [] = useCurrentUser();
+
   let { crumbs } = props;
   const Dashboardcrumb = {
     title: "Dashboard",
@@ -301,8 +305,10 @@ const AccountPage = (props: Props) => {
   crumbs.push(Dashboardcrumb, Accountcrumb);
   //if (!user) router.replace("/signin");
 
+  const title = `Account :  | Next.js + TypeScript + Chakra UI`;
+
   return (
-    <PublicLayout title="Account | Next.js + TypeScript + Chakra UI">
+    <UserLayout title={title}>
       <DefaultBreadcrumb crumbs={crumbs} />
       <style global jsx>{`
         html,
@@ -315,7 +321,7 @@ const AccountPage = (props: Props) => {
         }
       `}</style>
       <AccountSettings />
-    </PublicLayout>
+    </UserLayout>
   );
 };
 export default AccountPage;
