@@ -42,6 +42,7 @@ const PostsGrid = ({ creatorId }: Props) => {
         align-items="center"
         type="button"
         color={color}
+        bg={bg}
         onClick={() => setSize(size + 1)}
         disabled={isReachingEnd || isLoadingMore}
       >

@@ -1,4 +1,4 @@
-import { HamburgerIcon, LockIcon, UnlockIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, LockIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
