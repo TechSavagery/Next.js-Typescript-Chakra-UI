@@ -18,7 +18,11 @@ export default function DefaultBreadcrumb(props: BreadcrumbProps) {
   return (
     <Breadcrumb p="25px">
       {props.crumbs.map((crumb) => (
-        <BreadcrumbItem bg={bg} color={color}>
+        <BreadcrumbItem
+          key={Date.now().toString() + Math.floor(Math.random() * 10) + 1}
+          bg={bg}
+          color={color}
+        >
           <Link href={crumb.link} passHref>
             <BreadcrumbLink>{crumb.title}</BreadcrumbLink>
           </Link>

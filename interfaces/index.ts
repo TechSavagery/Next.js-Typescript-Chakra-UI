@@ -13,3 +13,9 @@ export type Crumb = {
   title: string;
   link: string;
 };
+
+export type Post = {
+  _id: string;
+  creatorId: string;
+  content: string;
+};

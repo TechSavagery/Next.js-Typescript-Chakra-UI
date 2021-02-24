@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Flex, Button, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue, IconButton } from "@chakra-ui/react";
 import LogoDefault from "../../../ui/logos/LogoDefault";
 import ThemeSelector from "../../../ui/toggles/ThemeSelector";
-import RightSideMenu from "../../../ui/menus/RightSideMenu";
 import MenuItems from "../../../ui/menus/MenuItems";
+import { LockIcon } from "@chakra-ui/icons";
+import UserMobileMenu from "../../../ui/menus/UserMobileMenu";
 
-export default function PublicHeader() {
+export default function UserHeader() {
   const [show] = React.useState(false);
   const bg = useColorModeValue("white", "gray.900");
   const color = useColorModeValue("gray.900", "white");
@@ -31,7 +32,7 @@ export default function PublicHeader() {
       </Flex>
 
       <Box display={{ base: "block", md: "none" }}>
-        {!show ? <RightSideMenu /> : null}
+        {!show ? <UserMobileMenu /> : null}
       </Box>
 
       <Box
@@ -45,14 +46,12 @@ export default function PublicHeader() {
           pt={[4, 4, 0, 0]}
         >
           <ThemeSelector />
-          <MenuItems to="/">Home</MenuItems>
-          <MenuItems to="/about">About </MenuItems>
-          <MenuItems to="/features">Features </MenuItems>
-          <MenuItems to="/pricing">Pricing </MenuItems>
-          <MenuItems to="/posts">Posts </MenuItems>
-          <MenuItems to="/api/posts">Posts API </MenuItems>
-          <MenuItems to="/signup" isLast>
-            <Button
+          <MenuItems to="/">Dashboard</MenuItems>
+          <MenuItems to="/about">Posts </MenuItems>
+          <MenuItems to="/features">Profile </MenuItems>
+          <MenuItems to="/pricing">Account </MenuItems>
+          <MenuItems to="/signout" isLast>
+            <IconButton
               variant="outline"
               size="sm"
               rounded="md"
@@ -66,9 +65,12 @@ export default function PublicHeader() {
                   "primary.600",
                 ],
               }}
+              colorScheme="teal"
+              aria-label="Call Segun"
+              icon={<LockIcon />}
             >
-              Create Account
-            </Button>
+              Log Out
+            </IconButton>
           </MenuItems>
         </Flex>
       </Box>
