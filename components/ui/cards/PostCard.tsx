@@ -1,8 +1,7 @@
 import React from "react";
 import { StarIcon } from "@chakra-ui/icons";
 import { Box, Badge, Image, useColorModeValue, Text } from "@chakra-ui/react";
-import { Post, User } from "../../../interfaces";
-import { useUser } from "../../../hooks/user";
+import { Post } from "../../../interfaces";
 import { postImages } from "../../../lib/postImages";
 
 type Props = {
@@ -10,11 +9,10 @@ type Props = {
 };
 
 function PostCard(props: Props) {
-  const { _id, creatorId, content } = props.data;
+  const { _id, content } = props.data;
 
   const bg = useColorModeValue("white", "gray.900");
   const color = useColorModeValue("gray.900", "white");
-  const user: User = useUser(creatorId);
 
   return (
     <Box
