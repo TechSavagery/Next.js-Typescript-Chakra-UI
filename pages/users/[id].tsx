@@ -142,7 +142,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const id = params?.id;
     console.log(id);
-    let user;
+    const res = await fetch(`http://localhost:3000/api/users/${id}`);
+const user = await res.json();
     // By returning { props: item }, the StaticPropsDetail component
     // will receive `item` as a prop at build time
     return { props: { user } };
