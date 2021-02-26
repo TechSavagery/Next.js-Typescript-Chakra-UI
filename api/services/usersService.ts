@@ -1,4 +1,5 @@
 import {
+  findAllUsers,
   findUserByEmail,
   findUserById,
   insertUser,
@@ -23,7 +24,7 @@ cloudinary.config({
   api_secret,
 });
 
-const sensitiveFields = ["email", "emailVerified", "password"];
+const sensitiveFields = ["emailVerified", "password"];
 export function extractUser(user: any) {
   if (!user) return null;
   const obj: {
@@ -75,6 +76,12 @@ export const updateUserInfo = async (
 export const getUserById = async (db: any, userId: any) => {
   const user = extractUser(await findUserById(db, userId));
   return user;
+};
+
+export const getAllUsers = async (db: any) => {
+  const users = await findAllUsers(db);
+  const extractedUsers = users.map((user: any) => extractUser(user));
+  return extractedUsers;
 };
 
 export const getUserByEmail = async (db: any, email: string) => {

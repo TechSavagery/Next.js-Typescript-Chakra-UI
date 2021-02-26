@@ -5,8 +5,12 @@
 // import { User } from 'path/to/interfaces';
 
 export type User = {
-  id: number;
+  id: string;
   name: string;
+  profileImage: string;
+  bio: string;
+  email: string;
+  _id: string;
 };
 
 export type Crumb = {

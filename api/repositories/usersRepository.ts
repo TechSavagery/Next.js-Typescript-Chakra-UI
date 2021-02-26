@@ -9,6 +9,10 @@ export async function findUserById(db: any, userId: any) {
     .then((user: any) => user || null);
 }
 
+export async function findAllUsers(db: any) {
+  return db.collection("users").find({}, {}).sort({}).toArray();
+}
+
 export async function findUserByEmail(db: any, email: any) {
   return db
     .collection("users")
